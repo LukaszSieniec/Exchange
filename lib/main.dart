@@ -1,5 +1,6 @@
 import 'package:exchange/common/app_environment.dart';
 import 'package:exchange/common/dependency_injection.dart';
+import 'package:exchange/features/navigation/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -30,6 +31,6 @@ class AppInitializationWidget extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp.router(
         title: 'Exchange',
         debugShowCheckedModeBanner: false,
-        backButtonDispatcher: RootBackButtonDispatcher(),
+        routerConfig: inject<AppRouter>().config(),
       );
 }
