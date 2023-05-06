@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:exchange/features/bottom_navigation_bar/bottom_navigation_bar_body.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class BottomNavigationBarPage extends StatelessWidget {
   const BottomNavigationBarPage({super.key});
 
