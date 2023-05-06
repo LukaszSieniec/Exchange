@@ -17,7 +17,7 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          path: 'splash',
+          path: '/splash',
           page: SplashRoute.page,
           initial: true,
         ),
