@@ -1,7 +1,9 @@
 import 'package:exchange/features/splash/presentation/bloc/splash_event.dart';
 import 'package:exchange/features/splash/presentation/bloc/splash_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class SplashBloc extends Bloc<SplashEvent, SplashState> {
   static const int _splashDuration = 2;
 
