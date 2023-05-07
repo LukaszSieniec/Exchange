@@ -3,6 +3,7 @@ import 'package:exchange/common/dependency_injection.dart';
 import 'package:exchange/features/navigation/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void initializeRunConfiguration({required AppEnvironment environment}) async {
   /// Ensure to run native code before the application starts.
@@ -28,9 +29,15 @@ class AppInitializationWidget extends StatelessWidget {
   const AppInitializationWidget({super.key});
 
   @override
-  Widget build(BuildContext context) => MaterialApp.router(
-        title: 'Exchange',
-        debugShowCheckedModeBanner: false,
-        routerConfig: inject<AppRouter>().config(),
+  Widget build(BuildContext context) => ScreenUtilInit(
+        builder: (context, child) => MaterialApp.router(
+          title: 'Exchange',
+          debugShowCheckedModeBanner: false,
+          routerConfig: inject<AppRouter>().config(),
+        ),
+        designSize: const Size(
+          375.0,
+          812.0,
+        ),
       );
 }
