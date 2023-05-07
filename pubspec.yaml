@@ -80,6 +80,9 @@ dependencies:
   # FlushBar.
   another_flushbar: ^1.12.29
 
+  # SVG images.
+  flutter_svg: ^2.0.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
