@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:exchange/common/dependency_injection.dart';
 import 'package:exchange/features/splash/presentation/bloc/splash_bloc.dart';
+import 'package:exchange/features/splash/presentation/bloc/splash_event.dart';
 import 'package:exchange/features/splash/presentation/splash_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,7 +12,8 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BlocProvider(
-        create: (context) => inject<SplashBloc>(),
+        create: (context) =>
+            inject<SplashBloc>()..add(const SplashEvent.load()),
         child: const SplashBody(),
       );
 }
