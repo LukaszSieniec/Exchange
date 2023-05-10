@@ -5,6 +5,7 @@ import 'package:exchange/features/transations/presentation/transactions_page.dar
 import 'package:exchange/features/wallet/presentation/wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomNavigationBarBody extends StatelessWidget {
   final PageController _pageController;
@@ -66,13 +67,13 @@ class BottomNavigationBarBody extends StatelessWidget {
   }) =>
       BottomNavigationBarItem(
         label: label,
-        icon: const Padding(
-          padding: EdgeInsets.symmetric(vertical: 5.0),
-          child: SizedBox(),
+        icon: Padding(
+          padding: EdgeInsets.symmetric(vertical: 5.0.r),
+          child: const SizedBox(),
         ),
-        activeIcon: const Padding(
-          padding: EdgeInsets.symmetric(vertical: 5.0),
-          child: SizedBox(),
+        activeIcon: Padding(
+          padding: EdgeInsets.symmetric(vertical: 5.0.r),
+          child: const SizedBox(),
         ),
       );
 }
