@@ -8,5 +8,10 @@
     "profile": {}
   },
   "error": {},
-  "common": {}
+  "common": {
+    "home": "Home",
+    "wallet": "Wallet",
+    "transactions": "Transactions",
+    "profile": "Profile"
+  }
 }
