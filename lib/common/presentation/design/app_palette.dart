@@ -24,4 +24,6 @@ class AppPalette {
   static const Color greenBright = Color(0xFF47B89E);
 
   static const Color red = Color(0xFFDF441E);
+
+  static const Color blue = Color(0xFF0566EB);
 }
