@@ -7,7 +7,7 @@ ElevatedButtonThemeData get elevatedButtonTheme => _buildElevatedButtonTheme();
 
 ElevatedButtonThemeData _buildElevatedButtonTheme() => ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppPalette.buttonDefault,
+        backgroundColor: AppPalette.greenBright,
         disabledBackgroundColor: AppPalette.buttonDisabled,
         textStyle: TextStyle(
           color: AppPalette.textDefault,

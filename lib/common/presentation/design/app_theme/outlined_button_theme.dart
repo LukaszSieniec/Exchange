@@ -9,7 +9,7 @@ OutlinedButtonThemeData _buildOutlinedButtonTheme() => OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
         backgroundColor: AppPalette.backgroundDefault,
         textStyle: TextStyle(
-          color: AppPalette.textGreen,
+          color: AppPalette.greenBright,
           fontSize: 16.0.sp,
           fontWeight: FontWeight.w500,
           fontFamily: appFontFamily,
@@ -18,7 +18,7 @@ OutlinedButtonThemeData _buildOutlinedButtonTheme() => OutlinedButtonThemeData(
           borderRadius: BorderRadius.circular(32.0.r),
         ),
         side: const BorderSide(
-          color: AppPalette.borderGreen,
+          color: AppPalette.greenBright,
           width: 1.5,
         ),
       ),
