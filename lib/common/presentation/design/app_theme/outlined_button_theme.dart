@@ -17,9 +17,9 @@ OutlinedButtonThemeData _buildOutlinedButtonTheme() => OutlinedButtonThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(32.0.r),
         ),
-        side: const BorderSide(
+        side: BorderSide(
           color: AppPalette.greenBright,
-          width: 1.5,
+          width: 1.5.r,
         ),
       ),
     );
