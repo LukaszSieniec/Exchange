@@ -1,0 +1,12 @@
+{
+  "screen": {
+    "login": {},
+    "register": {},
+    "home": {},
+    "wallet": {},
+    "transactions": {},
+    "profile": {}
+  },
+  "error": {},
+  "common": {}
+}
