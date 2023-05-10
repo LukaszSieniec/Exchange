@@ -3,7 +3,7 @@ import 'package:exchange/features/bottom_navigation_bar/bottom_navigation_bar_pa
 import 'package:exchange/features/home/presentation/home_page.dart';
 import 'package:exchange/features/profile/presentation/profile_page.dart';
 import 'package:exchange/features/splash/presentation/splash_page.dart';
-import 'package:exchange/features/transations/presentation/transactions_page.dart';
+import 'package:exchange/features/transactions/presentation/transactions_page.dart';
 import 'package:exchange/features/wallet/presentation/wallet_page.dart';
 import 'package:injectable/injectable.dart';
 

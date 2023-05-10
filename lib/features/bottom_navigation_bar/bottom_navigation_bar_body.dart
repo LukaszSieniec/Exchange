@@ -1,7 +1,7 @@
 import 'package:exchange/features/bottom_navigation_bar/cubit/bottom_navigation_bar_cubit.dart';
 import 'package:exchange/features/home/presentation/home_page.dart';
 import 'package:exchange/features/profile/presentation/profile_page.dart';
-import 'package:exchange/features/transations/presentation/transactions_page.dart';
+import 'package:exchange/features/transactions/presentation/transactions_page.dart';
 import 'package:exchange/features/wallet/presentation/wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:exchange/features/transations/presentation/transactions_body.dart';
+import 'package:exchange/features/transactions/presentation/transactions_body.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
