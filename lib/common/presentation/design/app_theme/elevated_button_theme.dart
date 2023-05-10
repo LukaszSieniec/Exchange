@@ -3,23 +3,22 @@ import 'package:exchange/common/presentation/design/app_theme/text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-OutlinedButtonThemeData get outlinedButtonTheme => _buildOutlinedButtonTheme();
+ElevatedButtonThemeData get elevatedButtonTheme => _buildElevatedButtonTheme();
 
-OutlinedButtonThemeData _buildOutlinedButtonTheme() => OutlinedButtonThemeData(
-      style: OutlinedButton.styleFrom(
-        backgroundColor: AppPalette.backgroundDefault,
+ElevatedButtonThemeData _buildElevatedButtonTheme() => ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: AppPalette.buttonDefault,
+        disabledBackgroundColor: AppPalette.buttonDisabled,
         textStyle: TextStyle(
-          color: AppPalette.textGreen,
+          color: AppPalette.textDefault,
           fontSize: 16.0.sp,
           fontWeight: FontWeight.w500,
           fontFamily: appFontFamily,
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(32.0.r),
-        ),
-        side: const BorderSide(
-          color: AppPalette.borderGreen,
-          width: 1.5,
+          borderRadius: BorderRadius.circular(
+            32.0.r,
+          ),
         ),
       ),
     );
