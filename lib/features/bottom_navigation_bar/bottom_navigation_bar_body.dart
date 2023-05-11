@@ -1,4 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:exchange/common/presentation/design/app_palette.dart';
+import 'package:exchange/common/presentation/design/app_shadows.dart';
 import 'package:exchange/features/bottom_navigation_bar/cubit/bottom_navigation_bar_cubit.dart';
 import 'package:exchange/features/home/presentation/home_page.dart';
 import 'package:exchange/features/profile/presentation/profile_page.dart';
@@ -30,34 +32,49 @@ class BottomNavigationBarBody extends StatelessWidget {
               ProfilePage(),
             ],
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            items: <BottomNavigationBarItem>[
-              _buildBottomNavBarItem(
-                label: LocaleKeys.common_home.tr(),
-                defaultIcon: '',
-                activeIcon: '',
+          bottomNavigationBar: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(32.0.r),
               ),
-              _buildBottomNavBarItem(
-                label: LocaleKeys.common_wallet.tr(),
-                defaultIcon: '',
-                activeIcon: '',
+              boxShadow: const [
+                AppShadows.bottomNavigationBarShadow,
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(32.0.r),
               ),
-              _buildBottomNavBarItem(
-                label: LocaleKeys.common_transactions.tr(),
-                defaultIcon: '',
-                activeIcon: '',
+              child: BottomNavigationBar(
+                type: BottomNavigationBarType.fixed,
+                items: <BottomNavigationBarItem>[
+                  _buildBottomNavBarItem(
+                    label: LocaleKeys.common_home.tr(),
+                    defaultIcon: '',
+                    activeIcon: '',
+                  ),
+                  _buildBottomNavBarItem(
+                    label: LocaleKeys.common_wallet.tr(),
+                    defaultIcon: '',
+                    activeIcon: '',
+                  ),
+                  _buildBottomNavBarItem(
+                    label: LocaleKeys.common_transactions.tr(),
+                    defaultIcon: '',
+                    activeIcon: '',
+                  ),
+                  _buildBottomNavBarItem(
+                    label: LocaleKeys.common_profile.tr(),
+                    defaultIcon: '',
+                    activeIcon: '',
+                  ),
+                ],
+                currentIndex: index,
+                onTap: (index) => context
+                    .read<BottomNavigationBarCubit>()
+                    .changedTab(selectedTab: index),
               ),
-              _buildBottomNavBarItem(
-                label: LocaleKeys.common_profile.tr(),
-                defaultIcon: '',
-                activeIcon: '',
-              ),
-            ],
-            currentIndex: index,
-            onTap: (index) => context
-                .read<BottomNavigationBarCubit>()
-                .changedTab(selectedTab: index),
+            ),
           ),
         ),
       );
