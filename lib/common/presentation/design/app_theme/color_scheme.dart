@@ -8,11 +8,11 @@ ColorScheme _buildColorScheme() => const ColorScheme(
 
       /// Primary
       primary: AppPalette.backgroundDefault,
-      onPrimary: AppPalette.textDefault,
+      onPrimary: AppPalette.white,
 
       /// Secondary
       secondary: AppPalette.backgroundDefault,
-      onSecondary: AppPalette.textDefault,
+      onSecondary: AppPalette.white,
 
       /// Error
       error: AppPalette.red,

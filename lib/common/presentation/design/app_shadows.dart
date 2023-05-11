@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 /// Shadows for containers.
 class AppShadows {
   static const BoxShadow bottomNavigationBarShadow = BoxShadow(
-    color: AppPalette.textDefault,
+    color: AppPalette.white,
     offset: Offset(
       0.0,
       5.0,

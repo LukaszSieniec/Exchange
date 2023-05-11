@@ -11,37 +11,37 @@ const String appFontFamily = 'Urbanist';
 TextTheme _buildTextTheme() => TextTheme(
       /// Headline
       headline1: TextStyle(
-        color: AppPalette.textDefault,
+        color: AppPalette.white,
         fontSize: 32.0.sp,
         fontWeight: FontWeight.normal,
         fontFamily: appFontFamily,
       ),
       headline2: TextStyle(
-        color: AppPalette.textDefault,
+        color: AppPalette.white,
         fontSize: 26.0.sp,
         fontWeight: FontWeight.normal,
         fontFamily: appFontFamily,
       ),
       headline3: TextStyle(
-        color: AppPalette.textDefault,
+        color: AppPalette.white,
         fontSize: 24.0.sp,
         fontWeight: FontWeight.normal,
         fontFamily: appFontFamily,
       ),
       headline4: TextStyle(
-        color: AppPalette.textDefault,
+        color: AppPalette.white,
         fontSize: 20.0.sp,
         fontWeight: FontWeight.normal,
         fontFamily: appFontFamily,
       ),
       headline5: TextStyle(
-        color: AppPalette.textDefault,
+        color: AppPalette.white,
         fontSize: 18.0.sp,
         fontWeight: FontWeight.normal,
         fontFamily: appFontFamily,
       ),
       headline6: TextStyle(
-        color: AppPalette.textDefault,
+        color: AppPalette.white,
         fontSize: 16.0.sp,
         fontWeight: FontWeight.normal,
         fontFamily: appFontFamily,
@@ -49,13 +49,13 @@ TextTheme _buildTextTheme() => TextTheme(
 
       /// Subtitle
       subtitle1: TextStyle(
-        color: AppPalette.textDefault,
+        color: AppPalette.white,
         fontSize: 18.0.sp,
         fontWeight: FontWeight.normal,
         fontFamily: appFontFamily,
       ),
       subtitle2: TextStyle(
-        color: AppPalette.textDefault,
+        color: AppPalette.white,
         fontSize: 16.0.sp,
         fontWeight: FontWeight.normal,
         fontFamily: appFontFamily,
@@ -63,13 +63,13 @@ TextTheme _buildTextTheme() => TextTheme(
 
       /// Body
       bodyText1: TextStyle(
-        color: AppPalette.textDefault,
+        color: AppPalette.white,
         fontSize: 14.0.sp,
         fontWeight: FontWeight.normal,
         fontFamily: appFontFamily,
       ),
       bodyText2: TextStyle(
-        color: AppPalette.textDefault,
+        color: AppPalette.white,
         fontSize: 12.0.sp,
         fontWeight: FontWeight.normal,
         fontFamily: appFontFamily,

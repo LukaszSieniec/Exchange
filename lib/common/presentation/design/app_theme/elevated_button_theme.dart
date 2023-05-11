@@ -10,7 +10,7 @@ ElevatedButtonThemeData _buildElevatedButtonTheme() => ElevatedButtonThemeData(
         backgroundColor: AppPalette.greenBright,
         disabledBackgroundColor: AppPalette.buttonDisabled,
         textStyle: TextStyle(
-          color: AppPalette.textDefault,
+          color: AppPalette.white,
           fontSize: 16.0.sp,
           fontWeight: FontWeight.w500,
           fontFamily: appFontFamily,
