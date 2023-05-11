@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 ColorScheme get colorScheme => _buildColorScheme();
 
 ColorScheme _buildColorScheme() => const ColorScheme(
-      brightness: Brightness.light,
+      brightness: Brightness.dark,
 
       /// Primary
       primary: AppPalette.backgroundDefault,
       onPrimary: AppPalette.white,
 
       /// Secondary
-      secondary: AppPalette.backgroundDefault,
+      secondary: AppPalette.greenBright,
       onSecondary: AppPalette.white,
 
       /// Error
