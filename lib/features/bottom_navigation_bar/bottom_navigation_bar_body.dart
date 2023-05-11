@@ -1,5 +1,4 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:exchange/common/presentation/design/app_palette.dart';
 import 'package:exchange/common/presentation/design/app_shadows.dart';
 import 'package:exchange/features/bottom_navigation_bar/cubit/bottom_navigation_bar_cubit.dart';
 import 'package:exchange/features/home/presentation/home_page.dart';
