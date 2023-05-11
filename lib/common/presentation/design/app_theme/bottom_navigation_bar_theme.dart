@@ -11,14 +11,13 @@ BottomNavigationBarThemeData _buildBottomNavigationBarTheme() =>
       backgroundColor: AppPalette.backgroundDefault,
       selectedLabelStyle: TextStyle(
         color: AppPalette.greenBright,
-        fontSize: 12.0.sp,
-        fontWeight: FontWeight.w600,
+        fontSize: 13.0.sp,
+        fontWeight: FontWeight.bold,
         fontFamily: appFontFamily,
       ),
       unselectedLabelStyle: TextStyle(
         color: AppPalette.grayBright,
         fontSize: 12.0.sp,
-        fontWeight: FontWeight.normal,
         fontFamily: appFontFamily,
       ),
     );
