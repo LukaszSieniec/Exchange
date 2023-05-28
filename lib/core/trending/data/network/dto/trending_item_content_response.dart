@@ -1,7 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:exchange/common/data/mapper/dto_mapper.dart';
-import 'package:exchange/core/trending/domain/entity/trending_item_entity.dart';
+import 'package:exchange/core/trending/domain/entity/trending_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'trending_item_content_response.freezed.dart';
@@ -11,7 +11,7 @@ part 'trending_item_content_response.g.dart';
 @freezed
 class TrendingItemContentResponse
     with _$TrendingItemContentResponse
-    implements DtoMapper<TrendingItemContentResponse, TrendingItemEntity> {
+    implements DtoMapper<TrendingItemContentResponse, TrendingEntity> {
   const TrendingItemContentResponse._();
 
   factory TrendingItemContentResponse({
@@ -32,7 +32,7 @@ class TrendingItemContentResponse
       _$TrendingItemContentResponseFromJson(json);
 
   @override
-  TrendingItemEntity toEntity() => TrendingItemEntity(
+  TrendingEntity toEntity() => TrendingEntity(
         id: id,
         name: name,
         symbol: symbol,
