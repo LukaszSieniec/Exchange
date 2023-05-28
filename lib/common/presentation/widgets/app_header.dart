@@ -12,7 +12,7 @@ class AppHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
         margin: EdgeInsets.only(
-          left: 32.0.r,
+          left: 20.0.r,
           top: 64.0.r,
         ),
         child: Text(
