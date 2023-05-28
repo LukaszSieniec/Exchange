@@ -2,14 +2,14 @@
   "screen": {
     "login": {},
     "register": {},
-    "home": {},
+    "dashboard": {},
     "wallet": {},
     "transactions": {},
     "profile": {}
   },
   "error": {},
   "common": {
-    "home": "Home",
+    "dashboard": "Dashboard",
     "wallet": "Wallet",
     "transactions": "Transactions",
     "profile": "Profile"

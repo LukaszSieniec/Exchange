@@ -48,7 +48,7 @@ class BottomNavigationBarBody extends StatelessWidget {
                 type: BottomNavigationBarType.fixed,
                 items: <BottomNavigationBarItem>[
                   _buildBottomNavBarItem(
-                    label: LocaleKeys.common_home.tr(),
+                    label: LocaleKeys.common_dashboard.tr(),
                     defaultIcon: '',
                     activeIcon: '',
                   ),

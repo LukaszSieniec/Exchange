@@ -11,7 +11,7 @@ class DashboardBody extends StatelessWidget {
   Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AppHeader(label: LocaleKeys.common_home.tr()),
+          AppHeader(label: LocaleKeys.common_dashboard.tr()),
           const CryptocurrencyTrendList(),
         ],
       );
