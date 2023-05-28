@@ -9,7 +9,7 @@ class AppPalette {
   /// Button.
   static const Color buttonDisabled = Color(0xFFBCC8CC);
 
-  /// Border
+  /// Border.
   static const Color borderWhite = Color(0xFFE4EAEB);
 
   /// Reusable colors.

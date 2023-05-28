@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:exchange/features/bottom_navigation_bar/bottom_navigation_bar_page.dart';
-import 'package:exchange/features/home/presentation/home_page.dart';
+import 'package:exchange/features/dashboard/presentation/dashboard_page.dart';
 import 'package:exchange/features/profile/presentation/profile_page.dart';
 import 'package:exchange/features/splash/presentation/splash_page.dart';
 import 'package:exchange/features/transactions/presentation/transactions_page.dart';
@@ -26,8 +26,8 @@ class AppRouter extends _$AppRouter {
           page: BottomNavigationBarRoute.page,
           children: [
             AutoRoute(
-              path: 'home',
-              page: HomeRoute.page,
+              path: 'dashboard',
+              page: DashboardRoute.page,
             ),
             AutoRoute(
               path: 'wallet',
