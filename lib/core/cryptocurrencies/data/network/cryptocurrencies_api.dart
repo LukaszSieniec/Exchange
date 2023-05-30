@@ -1,4 +1,4 @@
-import 'package:exchange/core/cryptocurrencies/data/network/dto/cryptocurrency_market_response/cryptocurrency_market_response.dart';
+import 'package:exchange/core/cryptocurrencies/data/network/dto/cryptocurrency_market/cryptocurrency_market_response.dart';
 import 'package:exchange/core/cryptocurrencies/data/network/dto/market_chart_response.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';

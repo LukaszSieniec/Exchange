@@ -1,7 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:exchange/common/data/mapper/dto_mapper.dart';
-import 'package:exchange/core/cryptocurrencies/data/network/dto/cryptocurrency_market_response/sparkline_response.dart';
+import 'package:exchange/core/cryptocurrencies/data/network/dto/cryptocurrency_market/sparkline_response.dart';
 import 'package:exchange/core/cryptocurrencies/domain/entity/cryptocurrency_market_entity.dart';
 import 'package:exchange/core/cryptocurrencies/domain/entity/sparkline_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
