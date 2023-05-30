@@ -1,22 +1,23 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:exchange/common/data/mapper/dto_mapper.dart';
-import 'package:exchange/core/cryptocurrencies/data/network/dto/currency_market_response/sparkline_response.dart';
-import 'package:exchange/core/cryptocurrencies/domain/entity/currency_market_entity.dart';
+import 'package:exchange/core/cryptocurrencies/data/network/dto/cryptocurrency_market_response/sparkline_response.dart';
+import 'package:exchange/core/cryptocurrencies/domain/entity/cryptocurrency_market_entity.dart';
 import 'package:exchange/core/cryptocurrencies/domain/entity/sparkline_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'currency_market_response.freezed.dart';
+part 'cryptocurrency_market_response.freezed.dart';
 
-part 'currency_market_response.g.dart';
+part 'cryptocurrency_market_response.g.dart';
 
 @freezed
-class CurrencyMarketResponse
-    with _$CurrencyMarketResponse
-    implements DtoMapper<CurrencyMarketResponse, CurrencyMarketEntity> {
-  const CurrencyMarketResponse._();
+class CryptocurrencyMarketResponse
+    with _$CryptocurrencyMarketResponse
+    implements
+        DtoMapper<CryptocurrencyMarketResponse, CryptocurrencyMarketEntity> {
+  const CryptocurrencyMarketResponse._();
 
-  factory CurrencyMarketResponse({
+  factory CryptocurrencyMarketResponse({
     required String id,
     required String symbol,
     required String name,
@@ -44,13 +45,13 @@ class CurrencyMarketResponse
         required double athChangePercentage,
     @JsonKey(name: 'sparkline_in_7d')
         required SparklineResponse sparklineIn7d,
-  }) = _CurrencyMarketResponse;
+  }) = _CryptocurrencyMarketResponse;
 
-  factory CurrencyMarketResponse.fromJson(Map<String, dynamic> json) =>
-      _$CurrencyMarketResponseFromJson(json);
+  factory CryptocurrencyMarketResponse.fromJson(Map<String, dynamic> json) =>
+      _$CryptocurrencyMarketResponseFromJson(json);
 
   @override
-  CurrencyMarketEntity toEntity() => CurrencyMarketEntity(
+  CryptocurrencyMarketEntity toEntity() => CryptocurrencyMarketEntity(
         id: id,
         symbol: symbol,
         name: name,
