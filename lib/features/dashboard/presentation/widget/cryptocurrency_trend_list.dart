@@ -1,16 +1,33 @@
+import 'package:exchange/core/cryptocurrencies/domain/entity/cryptocurrency_market_entity.dart';
 import 'package:flutter/material.dart';
 
 class CryptocurrencyTrendList extends StatelessWidget {
-  const CryptocurrencyTrendList({super.key});
+  final List<CryptocurrencyMarketEntity> cryptocurrencies;
+
+  const CryptocurrencyTrendList({
+    required this.cryptocurrencies,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) => ListView.builder(
-        itemBuilder: (context, index) => const CryptocurrencyTrendList(),
+        itemBuilder: (context, index) => CryptocurrencyTrendTile(
+          cryptocurrency: cryptocurrencies[index],
+          onPressed: () {},
+        ),
       );
 }
 
 class CryptocurrencyTrendTile extends StatelessWidget {
-  const CryptocurrencyTrendTile({super.key});
+  final CryptocurrencyMarketEntity cryptocurrency;
+
+  final VoidCallback onPressed;
+
+  const CryptocurrencyTrendTile({
+    required this.cryptocurrency,
+    required this.onPressed,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) => const SizedBox();
