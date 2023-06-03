@@ -20,8 +20,11 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
     final result = await _trendingRepository.fetchTrending();
 
     result.when(
-      success: (entities) =>
-          add(DashboardEvent.initialized(entities: entities ?? [])),
+      success: (trendingCryptocurrencies) => add(
+        DashboardEvent.initialized(
+          trendingCryptocurrencies: trendingCryptocurrencies ?? [],
+        ),
+      ),
       failure: (error) =>
           emit(state.copyWith(status: const DashboardStatus.failure())),
     );
@@ -30,5 +33,9 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
   Future<void> _onInitialized(
     InitializedDashboardEvent event,
     Emitter<DashboardState> emit,
-  ) async {}
+  ) async {
+    /// IDs of all popular cryptocurrencies.
+    final List<String> trendingCryptocurrencies =
+        event.trendingCryptocurrencies.map((element) => element.id).toList();
+  }
 }

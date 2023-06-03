@@ -10,8 +10,8 @@ class DashboardEvent with _$DashboardEvent {
       FetchedTrendingDashboardEvent;
 
   /// The event triggers an attempt to initialize the data.
-  /// It allows you to retrieve the most popular currencies and the first 25 elements.
+  /// It allows you to retrieve the most popular cryptocurrencies and the first 25 elements.
   const factory DashboardEvent.initialized({
-    required List<TrendingEntity> entities,
+    required List<TrendingEntity> trendingCryptocurrencies,
   }) = InitializedDashboardEvent;
 }
