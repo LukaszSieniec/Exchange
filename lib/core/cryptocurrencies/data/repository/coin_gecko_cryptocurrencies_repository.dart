@@ -12,14 +12,15 @@ class CoinGeckoCryptocurrenciesRepository
     implements CryptocurrenciesRepository {
   final CryptocurrenciesApi _cryptocurrenciesApi;
 
-  final BehaviorSubject<List<CryptocurrencyMarketEntity>> cryptocurrencies;
+  final BehaviorSubject<List<CryptocurrencyMarketEntity>>
+      cryptocurrenciesBehaviorSubject;
 
   CoinGeckoCryptocurrenciesRepository(this._cryptocurrenciesApi)
-      : cryptocurrencies = BehaviorSubject();
+      : cryptocurrenciesBehaviorSubject = BehaviorSubject();
 
   @override
   Stream<List<CryptocurrencyMarketEntity>> get observeCryptocurrenciesMarket =>
-      cryptocurrencies.stream;
+      cryptocurrenciesBehaviorSubject.stream;
 
   @override
   Future<Result<List<CryptocurrencyMarketEntity>, Exception>>
@@ -31,8 +32,43 @@ class CoinGeckoCryptocurrenciesRepository
     required int pageIndex,
     required bool sparkline,
     required String priceChangePercentage,
-  }) {
-    throw UnimplementedError();
+  }) async {
+    try {
+      final List<CryptocurrencyMarketResponse> cryptocurrenciesResponse =
+          await _cryptocurrenciesApi.fetchCryptocurrenciesMarket(
+        vsCurrency,
+        order,
+        pageSize,
+        pageIndex,
+        sparkline,
+        priceChangePercentage,
+      );
+
+      final List<CryptocurrencyMarketEntity> cryptocurrencyEntities =
+          cryptocurrenciesResponse
+              .map(
+                (cryptocurrencyResponse) => cryptocurrencyResponse.toEntity(),
+              )
+              .toList();
+
+      List<CryptocurrencyMarketEntity> updatedCryptocurrencies = [];
+
+      if (clearCryptocurrencies) {
+        updatedCryptocurrencies = [...cryptocurrencyEntities];
+      } else {
+        updatedCryptocurrencies = [
+          if (cryptocurrenciesBehaviorSubject.hasValue)
+            ...cryptocurrenciesBehaviorSubject.value,
+          ...cryptocurrencyEntities,
+        ];
+      }
+
+      cryptocurrenciesBehaviorSubject.add(updatedCryptocurrencies);
+
+      return const Result.success(data: null);
+    } on DioError catch (error) {
+      return Result.failure(error: error);
+    }
   }
 
   @override
@@ -54,12 +90,12 @@ class CoinGeckoCryptocurrenciesRepository
         priceChangePercentage,
       );
 
-      final List<CryptocurrencyMarketEntity> cryptocurrencies =
+      final List<CryptocurrencyMarketEntity> cryptocurrencyEntities =
           cryptocurrenciesResponse
               .map((currencyResponse) => currencyResponse.toEntity())
               .toList();
 
-      return Result.success(data: cryptocurrencies);
+      return Result.success(data: cryptocurrencyEntities);
     } on DioError catch (error) {
       return Result.failure(error: error);
     }
