@@ -5,6 +5,9 @@ import 'package:exchange/features/dashboard/presentation/bloc/dashboard_state.da
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
+  /// Possible number of CryptocurrenciesMarket to be retrieved at once.
+  static const int _pageSize = 25;
+
   final TrendingRepository _trendingRepository;
   final CryptocurrenciesRepository _cryptocurrenciesRepository;
 
@@ -49,29 +52,29 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
           vsCurrency: 'vsCurrency',
           ids: '$trendingCryptocurrencies',
           order: 'order',
-          sparkline: 'sparkline',
+          sparkline: true,
           priceChangePercentage: 'priceChangePercentage',
         ),
         _cryptocurrenciesRepository.fetchCryptocurrenciesMarket(
-          clearCryptocurrencies: '',
+          clearCryptocurrencies: true,
           vsCurrency: '',
           order: '',
-          pageSize: '',
-          pageIndex: '',
-          sparkline: '',
+          pageSize: _pageSize,
+          pageIndex: 1,
+          sparkline: true,
           priceChangePercentage: '',
         ),
       ],
     );
 
-    final results = results.fold(
+    final cryptocurrenciesMarket = results.fold(
       [],
-      (allResults, currentResult) {
+      (cryptocurrenciesMarket, currentResult) {
         currentResult.maybeMap(
-          success: (success) => allResults.add(success.data),
+          success: (success) => cryptocurrenciesMarket.add(success.data),
           orElse: () => null,
         );
-        return allResults;
+        return cryptocurrenciesMarket;
       },
     );
   }
