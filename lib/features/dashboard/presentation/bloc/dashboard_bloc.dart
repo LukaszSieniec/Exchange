@@ -1,3 +1,6 @@
+import 'package:exchange/common/enum/cryptocurrencies_market_order.dart';
+import 'package:exchange/common/enum/currency.dart';
+import 'package:exchange/common/enum/time_unit.dart';
 import 'package:exchange/core/cryptocurrencies/domain/repository/cryptocurrencies_repository.dart';
 import 'package:exchange/core/trending/domain/repository/trending_repository.dart';
 import 'package:exchange/features/dashboard/presentation/bloc/dashboard_event.dart';
@@ -49,33 +52,43 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
     final results = await Future.wait(
       [
         _cryptocurrenciesRepository.fetchCryptocurrenciesMarketByIds(
-          vsCurrency: 'vsCurrency',
+          vsCurrency: Currency.USD.name,
           ids: '$trendingCryptocurrencies',
-          order: 'order',
+          order: CryptocurrenciesMarketOrder.MARKET_CAP_DESC.name,
           sparkline: true,
-          priceChangePercentage: 'priceChangePercentage',
+          priceChangePercentage: TimeUnit.D.name,
         ),
         _cryptocurrenciesRepository.fetchCryptocurrenciesMarket(
           clearCryptocurrencies: true,
-          vsCurrency: '',
-          order: '',
+          vsCurrency: Currency.USD.name,
+          order: CryptocurrenciesMarketOrder.MARKET_CAP_DESC.name,
           pageSize: _pageSize,
           pageIndex: 1,
           sparkline: true,
-          priceChangePercentage: '',
+          priceChangePercentage: TimeUnit.D.name,
         ),
       ],
     );
 
-    final cryptocurrenciesMarket = results.fold(
+    final cryptocurrencies = results.fold(
       [],
-      (cryptocurrenciesMarket, currentResult) {
+      (cryptocurrencies, currentResult) {
         currentResult.maybeMap(
-          success: (success) => cryptocurrenciesMarket.add(success.data),
+          success: (success) => cryptocurrencies.add(success.data),
           orElse: () => null,
         );
-        return cryptocurrenciesMarket;
+        return cryptocurrencies;
       },
+    );
+
+    emit(
+      state.copyWith(
+        trendingCryptocurrencies: cryptocurrencies[0],
+        cryptocurrencies: cryptocurrencies[1],
+        status: cryptocurrencies.length == 2
+            ? const DashboardStatus.success()
+            : const DashboardStatus.failure(),
+      ),
     );
   }
 }

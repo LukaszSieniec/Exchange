@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-enum CurrenciesOrder {
+enum CryptocurrenciesMarketOrder {
   MARKET_CAP_ASC,
   MARKET_CAP_DESC,
   VOLUME_ASC,
