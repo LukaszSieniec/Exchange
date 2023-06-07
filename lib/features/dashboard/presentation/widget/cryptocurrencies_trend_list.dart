@@ -1,5 +1,6 @@
 import 'package:exchange/core/cryptocurrencies/domain/entity/cryptocurrency_market_entity.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CryptocurrenciesTrendList extends StatelessWidget {
   final List<CryptocurrencyMarketEntity> cryptocurrencies;
@@ -10,11 +11,15 @@ class CryptocurrenciesTrendList extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => ListView.builder(
+  Widget build(BuildContext context) => ListView.separated(
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
         itemBuilder: (context, index) => CryptocurrencyTrendTile(
           cryptocurrency: cryptocurrencies[index],
           onPressed: () {},
         ),
+        separatorBuilder: (context, index) => SizedBox(width: 12.0.w),
+        itemCount: cryptocurrencies.length,
       );
 }
 
