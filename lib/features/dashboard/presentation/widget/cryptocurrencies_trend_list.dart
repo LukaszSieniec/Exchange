@@ -1,10 +1,10 @@
 import 'package:exchange/core/cryptocurrencies/domain/entity/cryptocurrency_market_entity.dart';
 import 'package:flutter/material.dart';
 
-class CryptocurrencyTrendList extends StatelessWidget {
+class CryptocurrenciesTrendList extends StatelessWidget {
   final List<CryptocurrencyMarketEntity> cryptocurrencies;
 
-  const CryptocurrencyTrendList({
+  const CryptocurrenciesTrendList({
     required this.cryptocurrencies,
     super.key,
   });
