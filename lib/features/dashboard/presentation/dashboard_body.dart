@@ -7,6 +7,7 @@ import 'package:exchange/features/dashboard/presentation/widget/trending_cryptoc
 import 'package:exchange/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DashboardBody extends StatelessWidget {
   const DashboardBody({super.key});
@@ -16,14 +17,20 @@ class DashboardBody extends StatelessWidget {
       BlocBuilder<DashboardBloc, DashboardState>(
         builder: (context, state) => state.status.maybeWhen(
           loading: () => const AppLoading(),
-          orElse: () => Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AppHeader(label: LocaleKeys.common_dashboard.tr()),
-              TrendingCryptocurrenciesList(
-                cryptocurrencies: state.trendingCryptocurrencies,
-              ),
-            ],
+          orElse: () => SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AppHeader(label: LocaleKeys.common_dashboard.tr()),
+                SizedBox(height: 32.0.h),
+                SizedBox(
+                  height: 200.0.h,
+                  child: TrendingCryptocurrenciesList(
+                    cryptocurrencies: state.trendingCryptocurrencies,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       );

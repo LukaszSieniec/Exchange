@@ -85,8 +85,7 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
 
     emit(
       state.copyWith(
-        trendingCryptocurrencies: cryptocurrencies[0],
-        cryptocurrencies: cryptocurrencies[1],
+        trendingCryptocurrencies: cryptocurrencies.first ?? [],
         status: cryptocurrencies.length == 2
             ? const DashboardStatus.success()
             : const DashboardStatus.failure(),

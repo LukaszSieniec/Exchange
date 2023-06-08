@@ -22,7 +22,7 @@ class TrendingCryptocurrenciesList extends StatelessWidget {
           cryptocurrency: cryptocurrencies[index],
           onPressed: () {},
         ),
-        separatorBuilder: (context, index) => SizedBox(width: 12.0.w),
+        separatorBuilder: (context, index) => SizedBox(width: 20.0.w),
         itemCount: cryptocurrencies.length,
       );
 }
@@ -54,17 +54,17 @@ class CryptocurrencyTrendTile extends StatelessWidget {
               Row(
                 children: [
                   AppRoundedNetworkImage(imageUrl: cryptocurrency.image),
-                  SizedBox(width: 4.0.w),
+                  SizedBox(width: 12.0.w),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         cryptocurrency.symbol.toUpperCase(),
-                        style: TextStyle(fontSize: 6.0.sp),
+                        style: Theme.of(context).textTheme.headlineSmall,
                       ),
                       Text(
                         cryptocurrency.name,
-                        style: TextStyle(fontSize: 4.0.sp),
+                        style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ],
                   ),
