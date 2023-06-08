@@ -6,7 +6,9 @@ import 'package:exchange/core/trending/domain/repository/trending_repository.dar
 import 'package:exchange/features/dashboard/presentation/bloc/dashboard_event.dart';
 import 'package:exchange/features/dashboard/presentation/bloc/dashboard_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
   /// Possible number of CryptocurrenciesMarket to be retrieved at once.
   static const int _pageSize = 25;

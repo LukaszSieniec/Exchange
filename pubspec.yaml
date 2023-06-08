@@ -83,6 +83,9 @@ dependencies:
   # SVG images.
   flutter_svg: ^2.0.5
 
+  # Beautiful, animated and high-performance charts.
+  syncfusion_flutter_charts: ^21.2.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

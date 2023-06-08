@@ -11,4 +11,9 @@ class AppShadows {
     ),
     blurRadius: 15.0,
   );
+
+  static const BoxShadow trendingCryptocurrenciesShadow = BoxShadow(
+    color: AppPalette.grayBright,
+    blurRadius: 8.0,
+  );
 }
