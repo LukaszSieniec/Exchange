@@ -11,7 +11,7 @@ class AppRoundedNetworkImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => CircleAvatar(
-        radius: 24.0.r,
+        radius: 20.0.r,
         backgroundImage: NetworkImage(imageUrl),
         backgroundColor: Colors.transparent,
       );

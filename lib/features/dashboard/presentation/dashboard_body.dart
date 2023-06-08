@@ -18,18 +18,20 @@ class DashboardBody extends StatelessWidget {
         builder: (context, state) => state.status.maybeWhen(
           loading: () => const AppLoading(),
           orElse: () => SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AppHeader(label: LocaleKeys.common_dashboard.tr()),
-                SizedBox(height: 32.0.h),
-                SizedBox(
-                  height: 280.0.h,
-                  child: TrendingCryptocurrenciesList(
-                    cryptocurrencies: state.trendingCryptocurrencies,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0.r),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppHeader(label: LocaleKeys.common_dashboard.tr()),
+                  SizedBox(
+                    height: 260.0.h,
+                    child: TrendingCryptocurrenciesList(
+                      cryptocurrencies: state.trendingCryptocurrencies,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

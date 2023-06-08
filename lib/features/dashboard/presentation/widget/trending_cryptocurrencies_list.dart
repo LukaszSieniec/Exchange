@@ -2,6 +2,7 @@ import 'package:exchange/common/presentation/design/app_palette.dart';
 import 'package:exchange/common/presentation/design/app_shadows.dart';
 import 'package:exchange/common/presentation/widgets/app_rounded_network_image.dart';
 import 'package:exchange/core/cryptocurrencies/domain/entity/cryptocurrency_market_entity.dart';
+import 'package:exchange/features/dashboard/presentation/widget/trending_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_charts/sparkcharts.dart';
@@ -22,8 +23,9 @@ class TrendingCryptocurrenciesList extends StatelessWidget {
           cryptocurrency: cryptocurrencies[index],
           onPressed: () {},
         ),
-        separatorBuilder: (context, index) => SizedBox(width: 20.0.w),
+        separatorBuilder: (context, index) => SizedBox(width: 32.0.w),
         itemCount: cryptocurrencies.length,
+        clipBehavior: Clip.none,
       );
 }
 
@@ -42,7 +44,6 @@ class CryptocurrencyTrendTile extends StatelessWidget {
   Widget build(BuildContext context) => InkWell(
         onTap: onPressed,
         child: Container(
-          margin: EdgeInsets.all(4.0.r),
           padding: EdgeInsets.all(16.0.r),
           decoration: BoxDecoration(
             color: AppPalette.backgroundBright,
@@ -54,7 +55,7 @@ class CryptocurrencyTrendTile extends StatelessWidget {
               Row(
                 children: [
                   AppRoundedNetworkImage(imageUrl: cryptocurrency.image),
-                  SizedBox(width: 12.0.w),
+                  SizedBox(width: 10.0.w),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -68,12 +69,11 @@ class CryptocurrencyTrendTile extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(width: 6.0.w),
-
-                  /// TODO: Icon.
+                  SizedBox(width: 10.0.w),
+                  TrendingStatus(priceChange24h: cryptocurrency.priceChange24h),
                 ],
               ),
-              SizedBox(height: 32.0.h),
+              SizedBox(height: 24.0.h),
               SizedBox(
                 width: 175.0.w,
                 height: 100.0.h,
