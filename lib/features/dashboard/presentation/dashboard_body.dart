@@ -24,7 +24,7 @@ class DashboardBody extends StatelessWidget {
                 AppHeader(label: LocaleKeys.common_dashboard.tr()),
                 SizedBox(height: 32.0.h),
                 SizedBox(
-                  height: 200.0.h,
+                  height: 280.0.h,
                   child: TrendingCryptocurrenciesList(
                     cryptocurrencies: state.trendingCryptocurrencies,
                   ),

@@ -43,7 +43,7 @@ class CryptocurrencyTrendTile extends StatelessWidget {
         onTap: onPressed,
         child: Container(
           margin: EdgeInsets.all(4.0.r),
-          padding: EdgeInsets.all(20.0.r),
+          padding: EdgeInsets.all(16.0.r),
           decoration: BoxDecoration(
             color: AppPalette.backgroundBright,
             borderRadius: BorderRadius.all(Radius.circular(16.0.r)),
@@ -75,7 +75,7 @@ class CryptocurrencyTrendTile extends StatelessWidget {
               ),
               SizedBox(height: 32.0.h),
               SizedBox(
-                width: 64.0.w,
+                width: 175.0.w,
                 height: 100.0.h,
                 child: SfSparkLineChart(
                   data: cryptocurrency.sparklineEntity.prices,
@@ -87,7 +87,10 @@ class CryptocurrencyTrendTile extends StatelessWidget {
               SizedBox(height: 32.0.h),
               Text(
                 '\$ ${cryptocurrency.currentPrice}',
-                style: TextStyle(fontSize: 5.0.sp),
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineMedium!
+                    .copyWith(fontWeight: FontWeight.w500),
               ),
             ],
           ),
