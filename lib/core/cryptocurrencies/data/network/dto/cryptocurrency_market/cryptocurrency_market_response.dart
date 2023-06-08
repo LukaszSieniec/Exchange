@@ -37,7 +37,7 @@ class CryptocurrencyMarketResponse
     @JsonKey(name: 'circulating_supply')
         required num circulatingSupply,
     @JsonKey(name: 'total_supply')
-        required num totalSupply,
+        required num? totalSupply,
     @JsonKey(name: 'max_supply')
         required num? maxSupply,
     required num ath,

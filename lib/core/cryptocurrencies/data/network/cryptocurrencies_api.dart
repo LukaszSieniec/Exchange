@@ -31,7 +31,7 @@ abstract class CryptocurrenciesApi {
   );
 
   @GET('$cryptocurrenciesPath/{id}')
-  Future<Object> fetchCryptocurrencyById(
+  Future<CryptocurrencyMarketResponse> fetchCryptocurrencyById(
     @Path() String id,
     @Query("localization") String localization,
     @Query("tickers") bool tickers,
